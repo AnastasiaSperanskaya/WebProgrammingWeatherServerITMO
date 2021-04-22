@@ -51,4 +51,4 @@ router.delete('/favorites', asyncHandler( async (request, result) => {
   result.status(204).send();
 }));
 
-module.exports = {router: router, dao: dao};
+module.exports = {router, dao};

@@ -38,7 +38,11 @@ class ApiHandler {
     return this.getResponseInJSON(response.data);
   }
 
-  async getCities(cities){ return await Promise.all(cities.map(city => { return this.getWeatherInfo(city); })); }
+  async getCities(cities) { 
+    return await Promise.all(cities.map(city => { 
+      return this.getWeatherInfo(city); 
+    })); 
+  }
 }
 
 module.exports = ApiHandler;
