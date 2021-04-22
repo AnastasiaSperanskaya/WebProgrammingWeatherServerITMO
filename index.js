@@ -2,10 +2,10 @@ require('dotenv').config({ path: '.env' });
 const express = require('express');
 const cors = require('cors');
 const app = express();
-const { router, dao } = require('./js/endpoints')
+const { router, dao } = require('./js/endpoints');
 const port = process.env.PORT || 3000;
 app.use(cors());
-app.use('', router)
+app.use('', router);
 
 const server = app.listen(port, async (err) => {
     await dao.connect();

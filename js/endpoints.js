@@ -17,7 +17,7 @@ router.get('/weather/city', asyncHandler(async (request, result) => {
 
 router.get('/weather/coordinates', asyncHandler(async (request, result) => {
   const regexp = /^-?\d+\.?\d+$/;
-  if (!regexp.test(request.query.lat) && regexp.test(request.query.lon)) {
+  if (!regexp.test(request.query.lat) || !regexp.test(request.query.lon)) {
     result.status(404).json();
     return;
   }
